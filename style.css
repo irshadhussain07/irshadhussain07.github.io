@@ -1,5 +1,5 @@
 body {
-background-color: red;
+  background-color: red;
 }
 h1 {
 font-family: "Georgia";
@@ -25,5 +25,7 @@ border: 1em solid #000;
 background-color: #fff;
 }
 #work {
+border-radius: 5%;
+border: 1em solid #000;
 text-transform: uppercase;
 }
