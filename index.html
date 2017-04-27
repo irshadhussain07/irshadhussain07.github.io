@@ -41,6 +41,22 @@ Project One - Index
 
   var trafficLayer = new google.maps.TrafficLayer();
   trafficLayer.setMap(map);
+	       marker = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat: 34.04924594193164, lng: -118.24104309082031}
+        });
+        marker.addListener('click', toggleBounce);
+      }
+
+      function toggleBounce() {
+        if (marker.getAnimation() !== null) {
+          marker.setAnimation(null);
+        } else {
+          marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+      }
 }
     </script>
     <script async defer
