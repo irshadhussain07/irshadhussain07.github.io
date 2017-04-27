@@ -14,7 +14,7 @@ Project One - Index
 
 
 	<body>
-		<layer id="placeholderlayer"></layer><div id="placeholderdiv"></div>
+		
 
 		<h1>Irshad Hussain</h1>
 		<h3>3201 S State Street.ihussain1@hawk.iit.edu.(319)540-9032</h3>
@@ -30,7 +30,10 @@ Project One - Index
 				<a href='work.html'>Work</a>
 			</li>
 		</ul>
-		<h3>Maps with Traffic</h3>
+		<h3>Maps with Markers and animations</h3>
+		<div id="floating-panel">
+      <button id="drop" onclick="drop()">Drop Markers</button>
+    </div>
 		<div id="map"></div>
 		 <script>
 
@@ -39,6 +42,14 @@ Project One - Index
       // animation and no animation.
 
       var marker;
+	var neighborhoods = [
+        {lat: 52.511, lng: 13.447},
+        {lat: 52.549, lng: 13.422},
+        {lat: 52.497, lng: 13.396},
+        {lat: 52.517, lng: 13.394}
+      ];
+
+      var markers = [];
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -61,6 +72,28 @@ Project One - Index
         } else {
           marker.setAnimation(google.maps.Animation.BOUNCE);
         }
+	      function drop() {
+        clearMarkers();
+        for (var i = 0; i < neighborhoods.length; i++) {
+          addMarkerWithTimeout(neighborhoods[i], i * 200);
+        }
+      }
+
+      function addMarkerWithTimeout(position, timeout) {
+        window.setTimeout(function() {
+          markers.push(new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP
+          }));
+        }, timeout);
+      }
+
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          markers[i].setMap(null);
+        }
+        markers = [];
       }
     </script>
     <script async defer
