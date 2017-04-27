@@ -40,6 +40,10 @@ Project One - Index
           zoom: 4,
           center: uluru
         });
+	map.data.setStyle({
+  icon: 'https://static.yocket.in/images/universities/logos/illinois_tech_logo.jpg',
+  fillColor: 'green'
+});
         var marker = new google.maps.Marker({
           position: uluru,
           map: map
