@@ -30,25 +30,18 @@ Project One - Index
 				<a href='work.html'>Work</a>
 			</li>
 		</ul>
-		<h3>My Home Town - Hunza Valley</h3>
+		<h3>Maps with Traffic</h3>
 		<div id="map"></div>
 		<script>
       function initMap() {
-	   
-        var uluru = {lat: 36.312522, lng: 74.669330};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-	map.data.setStyle({
-  icon: 'https://static.yocket.in/images/universities/logos/illinois_tech_logo.jpg',
-  fillColor: 'green'
-});
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: {lat: 34.04924594193164, lng: -118.24104309082031}
+  });
+
+  var trafficLayer = new google.maps.TrafficLayer();
+  trafficLayer.setMap(map);
+}
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUxL-62rGqy1EdwGNwkQY6Qba2MZ3lnKg&callback=initMap">
