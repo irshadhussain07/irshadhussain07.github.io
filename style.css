@@ -34,7 +34,6 @@ text-transform: uppercase;
   width: 80%;
        }
  #floating-panel {
-        position: absolute;
         top: 10px;
         left: 25%;
         z-index: 5;
