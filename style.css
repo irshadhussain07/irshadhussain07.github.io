@@ -34,8 +34,6 @@ text-transform: uppercase;
   width: 80%;
        }
  #floating-panel {
-        top: 10px;
-        left: 25%;
         z-index: 5;
         background-color: #fff;
         padding: 5px;
